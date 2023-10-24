@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字韻書查詢</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4682B4;
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #EE7942;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #CD6839;
+        }
+        .explanation {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>字韻書查詢</h1>
+    <form action="/search" method="post">
+        <input type="text" name="char" required>
+        <input type="submit" value="查询">
+    </form>
+    <div class="explanation">
+        <p>包括的書：《名義》《字鏡》《經典釋文》《廣雅》。</p>
+        <p>功能介紹：支持異體字、原書多字頭檢索。</p>
+        <p>需要注意：</p>
+        <p>1.異體字庫用的是"異體字字典"，因此只支持輸入繁體。</p>
+        <p>2.《經典釋文》和《廣雅》的數據質量不好。</p>
+        <p>3.如果原書有多個字頭，那麼輸入其中一個字也可以返回相關結果。但是有些生僻字是用⿰⿱這些各個符號造的，因此它們也會被返回，這個暫時没有好的解決方法（小鏡也是這樣的）。</p>
+        <p>23.10 小趙 學</p>
+    </div>
+</body>
+</html>

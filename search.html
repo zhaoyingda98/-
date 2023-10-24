@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字韻書查詢</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
+        }
+        h2 {
+            color: #4a4a4a;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>字韻書查詢</h1>
+    <h2>查詢結果: {{ char }}</h2>
+    <table>
+        <tr>
+            <th>字</th>
+            <th>書名</th>
+            <th>部件</th>
+            <th>注文</th>
+            <th>備註</th>
+        </tr>
+        {% for meaning in meanings %}
+        <tr>
+            <td>{{ meaning['字'] }}</td>
+            <td>{{ meaning['書名'] }}</td>
+            <td>{{ meaning['部件'] }}</td>
+            <td>{{ meaning['注文'] }}</td>
+            <td>{{ meaning['備註'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>異體字釋義</h2>
+    <table>
+        <tr>
+            <th>字</th>
+            <th>書名</th>
+            <th>部件</th>
+            <th>注文</th>
+            <th>備註</th>
+        </tr>
+        {% for meaning in variant_meanings %}
+        <tr>
+            <td>{{ meaning['字'] }}</td>
+            <td>{{ meaning['書名'] }}</td>
+            <td>{{ meaning['部件'] }}</td>
+            <td>{{ meaning['注文'] }}</td>
+            <td>{{ meaning['備註'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
